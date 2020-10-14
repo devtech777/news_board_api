@@ -32,11 +32,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     # many-to-one relationship with the Post model
-    post_id = models.ForeignKey(
-            Post,
-            on_delete=models.CASCADE,
-            related_name="comments"
-        )
+    post_id = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     # comment author name
     author_name = models.CharField(max_length=100, null=False)
     # comment content

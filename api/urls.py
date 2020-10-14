@@ -18,5 +18,5 @@ from django.urls import include
 from django.conf.urls import url
 
 urlpatterns = [
-    url(r'^', include('news.urls')),
+    url(r"^", include("news.urls")),
 ]
