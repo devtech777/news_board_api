@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,10 +34,9 @@ STATICFILES_DIRS = (
 SECRET_KEY = "s&2*$3r+)q5*9(wxs5^_1r+jnte93s%$@5e8i4_=fk=94xa&u!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -147,3 +147,6 @@ CORS_ORIGIN_WHITELIST = (
 CRONJOBS = [
     ('30 0 * * *', 'news.cron.reset_votes')
 ]
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

@@ -9,12 +9,6 @@ ENV PYTHONUNBUFFERED 1
 # Install cron
 RUN apt-get update && apt-get -y install cron
 
-# Create the log file to be able to run tail
-RUN touch /var/log/cron.log
-
-# Run the command on container startup
-CMD cron && tail -f /var/log/cron.log
-
 # create root directory for our project in the container
 RUN mkdir /news_board
 
@@ -26,3 +20,4 @@ ADD . /news_board/
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
+
