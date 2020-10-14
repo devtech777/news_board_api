@@ -10,7 +10,6 @@ django-crontab==0.7.1
 djangorestframework==3.12.1
 mypy-extensions==0.4.3
 pathspec==0.8.0
-pkg-resources==0.0.0
 psycopg2==2.8.6
 pytz==2020.1
 regex==2020.10.11

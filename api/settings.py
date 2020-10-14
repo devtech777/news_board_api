@@ -25,7 +25,7 @@ SECRET_KEY = "s&2*$3r+)q5*9(wxs5^_1r+jnte93s%$@5e8i4_=fk=94xa&u!"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -80,12 +80,12 @@ WSGI_APPLICATION = "api.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "news",
-        "USER": "newsuser",
-        "PASSWORD": "1111",
-        "HOST": "localhost",
-        "PORT": "",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
@@ -94,18 +94,18 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+  {
+    "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+  },
+  {
+    "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+  },
+  {
+    "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+  },
+  {
+    "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+  },
 ]
 
 
@@ -135,5 +135,5 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 CRONJOBS = [
-    ('*/1 * * * *', 'news.cron.reset_votes')
+    ('30 0 * * *', 'news.cron.reset_votes')
 ]
