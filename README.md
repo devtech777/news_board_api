@@ -6,8 +6,12 @@ To start application using Docker use the following command:
 ```
 docker-compose up
 ```
+
 ## API documentation
-There is [link](https://documenter.getpostman.com/view/12026468/TVRoYSNx) to Postman collection
+There is a [link](https://documenter.getpostman.com/view/12026468/TVRoYSNx) to Postman collection
+
+## Live demo
+There is a [link](https://news-board7.herokuapp.com/) to deployed application. You can use Postman collection to get relevant API URL on deployed environment. 
 
 ## Recurring Job
 In order to implement recurring jobs I use [django-crontab](https://github.com/kraiz/django-crontab).
